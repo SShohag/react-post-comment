@@ -11,9 +11,6 @@ const Home = () => {
     },[])
     return (
         <div>
-            <h1>This is home component </h1>
-            <p>Post loaded: {posts.length}</p>
-
             {
                 posts.map( post => <Post post={post}></Post>)
             }

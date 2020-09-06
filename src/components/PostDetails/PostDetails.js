@@ -21,6 +21,7 @@ const PostDetails = () => {
     const {postId} = useParams();
     const [posts, setPosts] = useState({})
     const [ comments, setComments] = useState([])
+    
     useEffect(()=>{
         const idUrl = `http://jsonplaceholder.typicode.com/posts/${postId}`
         fetch(idUrl)
@@ -35,7 +36,7 @@ const PostDetails = () => {
         .then( data => setComments(data))
         
     },[]);
-    console.log( comments)
+    // console.log( comments)
     return (
         <div>
 
@@ -52,7 +53,7 @@ const PostDetails = () => {
                 </CardActionArea>
             </Card>
             {
-                comments.map( remark=> <Comment remark={remark}></Comment>)
+                comments.map( remark=> <Comment key={remark.id} remark={remark}></Comment>)
             }
         </div>
     );

@@ -9,7 +9,7 @@ const defaultProps = {
   style: { width: '1', height: '1/4' },
 };
 const Comment = (props) => {
-    console.log(props)
+    // console.log(props)
     const {name, email, body} = props.remark;
     
     return (
