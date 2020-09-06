@@ -23,14 +23,14 @@ const PostDetails = () => {
     const [ comments, setComments] = useState([])
     
     useEffect(()=>{
-        const idUrl = `http://jsonplaceholder.typicode.com/posts/${postId}`
+        const idUrl = `https://jsonplaceholder.typicode.com/posts/${postId}`
         fetch(idUrl)
         .then( res => res.json())
         .then( data => setPosts(data))
 
     },[]);
     useEffect(()=>{
-        const idUrl = `http://jsonplaceholder.typicode.com/comments?postId=${postId}`
+        const idUrl = `https://jsonplaceholder.typicode.com/comments?postId=${postId}`
         fetch(idUrl)
         .then( res => res.json())
         .then( data => setComments(data))
